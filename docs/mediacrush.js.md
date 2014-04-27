@@ -3,7 +3,7 @@
 We have a nice Javascript library for integrating MediaCrush into your website. You can get the latest
 version [here](/static/mediacrush.js), or you can just use this:
 
-    <script type="text/javascript" src="https://mediacru.sh/static/mediacrush.js"></script>
+    <script src="https://mediacru.sh/static/mediacrush.js"></script>
 
 ## Usage
 

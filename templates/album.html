@@ -3,14 +3,14 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='album.css') }}" />
 {% endblock %}
 {% block scripts %}
-    <script type="text/javascript">
+    <script>
         window.album = true;
         window.filename = '{{ filename }}';
         window.files = {{ files | tojson | safe }};
     </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='album.js') }}"></script>
+    <script src="{{ url_for('static', filename='album.js') }}"></script>
     {% if subtitles %}
-    <script type="text/javascript" src="{{ url_for('static', filename='libjass.js') }}"></script>
+    <script src="{{ url_for('static', filename='libjass.js') }}"></script>
     {% endif %}
 {% endblock %}
 {% block meta %}

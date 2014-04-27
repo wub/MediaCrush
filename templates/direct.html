@@ -28,7 +28,7 @@
         <link rel="stylesheet" href="/static/dark.css" />
         {% endif %}
         <style>html,body{margin:0;padding:0;overflow:hidden}</style>
-        <script type="text/javascript">
+        <script>
             window.filename = "{{ filename }}";
             {% if embedded %}
             window.embedded = true;
@@ -37,14 +37,14 @@
             {% endif %}
         </script>
         {% if has_subtitles %}
-        <script type="text/javascript" src="{{ url_for('static', filename='libjass.js') }}"></script>
+        <script src="{{ url_for('static', filename='libjass.js') }}"></script>
         {% endif %}
     </head>
     <body class="view">
         <div style="display: inline-block">
             {% include fragment %}
         </div>
-        <script type="text/javascript">
+        <script>
             {% if mobile %}
             window.mobile = true;
             {% else %}
@@ -104,7 +104,7 @@
             }
         </style>
         {% endif %}
-        <script type="text/javascript">
+        <script>
             (function() {
                 var hidden = document.querySelectorAll('.hidden-if-noscript');
                 for (var i = 0; i < hidden.length; i++) {

@@ -21,7 +21,7 @@
     <img id="img-{{filename}}" src="{{ cdn }}/{{ filename }}.png" alt="MediaCrush" />
     {% endif %}
 </a>
-<script type="text/javascript">
+<script>
 function mediaSizeReporter() {
     var img = document.getElementById('img-{{filename}}');
     return { width: img.width, height: img.height };

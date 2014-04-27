@@ -7,10 +7,10 @@
     {% endif %}
 {% endblock %}
 {% block scripts %}
-    <script type="text/javascript">
+    <script>
         window.can_delete = '{{ can_delete }}';
     </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='album.js') }}"></script>
+    <script src="{{ url_for('static', filename='album.js') }}"></script>
 {% endblock %}
 {% block meta %}
 {% for item in [ items[0] ] %}

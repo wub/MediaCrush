@@ -4,18 +4,18 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='view.css') }}" />
 {% endblock %}
 {% block scripts %}
-    <script type="text/javascript">
+    <script>
         window.filename = '{{ filename }}';
         window.can_delete = '{{ can_delete }}';
         window.embedded = '{{ embedded }}';
         window.flags = {{ flags | tojson }}; 
     </script>
-    <script type="text/javascript" src="{{ url_for('static', filename='view.js') }}"></script>
+    <script src="{{ url_for('static', filename='view.js') }}"></script>
     {% if has_subtitles %}
     {% if subtitles['info']['codec_name'] == 'srt' or subtitles['info']['codec_name'] == 'vtt' %}
-    <script type="text/javascript" src="{{ url_for('static', filename='captionator.js') }}"></script>
+    <script src="{{ url_for('static', filename='captionator.js') }}"></script>
     {% else %}
-    <script type="text/javascript" src="{{ url_for('static', filename='libjass.js') }}"></script>
+    <script src="{{ url_for('static', filename='libjass.js') }}"></script>
     {% endif %}
     {% endif %}
 {% endblock %}
