@@ -2,37 +2,35 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <meta name="description" content="MediaCrush makes sharing media super easy and super fast. You can upload images, audio, and video for fast, reliable hosting with none of the usual nonsense.">
-        <meta name="keywords" content="gif,png,fast,mp4,ogv,image,host">
-        {% block mobile_responsive %}
-        {% if mobile %}
-        <meta name="viewport" content="width=device-width, user-scalable=no" />
-        {% endif %}
-        {% endblock %}
-        {% block meta %}{% endblock %} 
         <title>MediaCrush</title>
-        <script type="text/javascript">
+        <meta name="description" content="MediaCrush makes sharing media super easy and super fast. 
+        Upload images, audio, and video with none of the usual nonsense.">
+        {% block meta %}{% endblock %}
+        
+        {% block mobile_responsive %}
             {% if mobile %}
-            window.mobile = true;
-            {% else %}
-            window.mobile = false;
+                <meta name="viewport" content="width=device-width, user-scalable=no">
             {% endif %}
-            window.cdn = "{{ cdn }}";
-            {% if is_tor %}
-            window.is_tor = true;
-            {% else %} 
-            window.is_tor = false;
-            {% endif %}
-        </script>
-        {% block scripts %}
-        <script src="/static/global.js" type="text/javascript"></script>
         {% endblock %}
-        <link href='//fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
-        <link rel="icon" type="image/vnd.microsoft.icon" href="/static/favicon.ico" />
+    
+        <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300">
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        
         {% block styles %}{% endblock %}
+
         {% if dark_theme %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='dark.css') }}">
+            <link rel="stylesheet" href="{{ url_for('static', filename='dark.css') }}">
         {% endif %}
+
+        <script>
+            window.mobile = {% if mobile %} true {% else %} false {% endif %};
+            window.is_tor = {% if is_tor %} true {% else %} false {% endif %};
+            window.cdn = "{{ cdn }}";
+        </script>
+
+        {% block scripts %}
+            <script src="{{ url_for('static', filename='global.js') }}"></script>
+        {% endblock %}
     </head>
     <body>
         <div class="container">
@@ -40,8 +38,9 @@
             <div class="navigation">
                 <h1 class="brand">
                     <a href="/">
-                    <img src="/static/mediacrush_logo.svg" alt="logo" width=24 height=24 />
-                    MediaCrush</a>
+                        <img src="{{ url_for('static', filename='mediacrush_logo.svg') }}" alt="MediaCrush" width="24" height="24">
+                        MediaCrush
+                    </a>
                 </h1>
                 {% if not mobile %}
                 <ul>
@@ -51,7 +50,9 @@
                     <li><a href="//blog.mediacru.sh">Blog</a></li>
                     <li><a href="/about">About</a></li>
                 </ul>
-                <a href="javascript:switchTheme();" class="pull-right small hidden-if-noscript">{% if dark_theme %}Light theme{% else %}Dark theme{% endif %}</a>
+                <a href="javascript:switchTheme();" class="pull-right small hidden-if-noscript">
+                    {% if dark_theme %}Light theme{% else %}Dark theme{% endif %}
+                </a>
                 {% else %}
                 <ul>
                     <li><a href="/">Upload</a></li>
@@ -66,7 +67,7 @@
         </div>
         {% block feedback %}
         <div id="feedback" class="hidden-if-noscript">
-            <a href="#" id="toggle-feedback"><img src="/static/feedback.png" alt="How are we doing?" /></a>
+            <a href="#" id="toggle-feedback"><img src="{{ url_for('static', filename='feedback.png') }}" alt="How are we doing?"></a>
             <div>
                 <textarea id="feedback-text"></textarea>
                 <a class="button" href="#" id="send-feedback">Send feedback</a>
@@ -98,7 +99,7 @@
         </script>
         {% if ads %}
         <!-- Project Wonderful Ad Box Loader -->
-        <script type="text/javascript">
+        <script>
            (function(){function pw_load(){
               if(arguments.callee.z)return;else arguments.callee.z=true;
               var d=document;var s=d.createElement('script');

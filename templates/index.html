@@ -1,12 +1,12 @@
 {% extends "layout.html" %}
 {% block scripts %}
-<script src="{{ url_for('static', filename='home.js') }}" type="text/javascript"></script>
+<script src="{{ url_for('static', filename='home.js') }}"></script>
 {% endblock %}
 {% block styles %}
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='home.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 {% endblock %}
 {% block meta %}
-<meta property="og:image" content="https://mediacru.sh/static/logo.png" />
+<meta property="og:image" content="https://mediacru.sh/static/logo.png">
 {% endblock %}
 {% block content %}
 <div class="psuedohidden" id="paste-target" contenteditable></div>
@@ -17,7 +17,7 @@
         </div> #}
         <div id="drop-wrapper">
             <div id="droparea">
-                <input type="file" id="browse" class="hidden" multiple />
+                <input type="file" id="browse" class="hidden" multiple>
                 <div id="albumUI">
                     <div class="status hidden">Processing, please wait...</div>
                     <a href="#" class="button hidden">Create Album</a>
@@ -31,9 +31,6 @@
                 </div>
                 <div id="files">
                     {# Things in here will be removed after the first file is uploaded #}
-                    <div class="konami icons hidden">
-                        <img src="/static/konami-icons.png" alt="Hazards" />
-                    </div>
                     <div class="social">
                         <a target="_blank" href="https://pay.reddit.com/r/MediaCrush">/r/MediaCrush</a>
                         <a target="_blank" href="https://twitter.com/mediacru_sh">@mediacru_sh</a>
@@ -48,13 +45,14 @@
                     {# Things in here stay in here past the first upload #}
                     <div id="droptext">
                         <div class="hidden-if-noscript">
-                            <a href="#" id="browse-link">Drag and drop or click to upload<br/><span class="small">Or use Ctrl+V to paste images or URLs<br />Upload several to create an album!</span></a>
+                            <a href="#" id="browse-link">Drag and drop or click to upload<br><span class="small">Or use Ctrl+V to paste images or URLs
+                            <br>Upload several to create an album!</span></a>
                         </div>
                     </div>
                     <noscript class="center" style="line-height: 25px; position: relative; top: -40px">
                         <form method="POST" enctype="multipart/form-data" action="/api/upload/noscript">
-                            Upload video, audio, or images:<br />
-                            <input type="file" name="file" /><input type="submit" value="Upload" /><br />
+                            Upload video, audio, or images:<br>
+                            <input type="file" name="file"><input type="submit" value="Upload"><br>
                             Anonymous users, please take special note of the <a href="/serious">terms of service</a>.
                         </form>
                     </noscript>
@@ -64,7 +62,7 @@
         </div>
         <div class="small center" style="margin-top: 14px">
             <ul class="inline">
-                <li><a href="/serious">Terms & Privacy</a></li>
+                <li><a href="/serious">Terms &amp; Privacy</a></li>
                 <li><a href="/docs">Developers</a></li>
                 {% if is_tor %}
                 <li><a href="https://mediacru.sh">Clearnet Site</a></li>
@@ -108,7 +106,4 @@
     </div>
 </div>
 <div class="clearfix"></div>
-<div class="konami credit hidden">
-    Music by <a target="_blank" href="https://soundcloud.com/superspink">superspink</a>
-</div>
 {% endblock %}
