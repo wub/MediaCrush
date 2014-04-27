@@ -22,7 +22,7 @@ debug-port = 5000
 
 # When true, static resources will be recompiled on every request, instead of just
 # at startup
-debug-static-recompile=false
+debug-static-recompile = false
 
 # storage_folder is the location on disk where uploaded files should be saved.
 # If you have problems, you might want to use an absolute path here
