@@ -22,10 +22,10 @@
         <title>MediaCrush</title>
         <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
         <link rel="icon" type="image/vnd.microsoft.icon" href="/static/favicon.ico" />
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='view.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='view.css') }}" />
         <script src="/static/direct.js"></script>
         {% if dark_theme %}
-        <link rel="stylesheet" type="text/css" href="/static/dark.css" />
+        <link rel="stylesheet" href="/static/dark.css" />
         {% endif %}
         <style>html,body{margin:0;padding:0;overflow:hidden}</style>
         <script type="text/javascript">
