@@ -53,12 +53,12 @@ window.addEventListener('load', function() {
 <div id="media-select-{{ filename }}" class="media-select">
     <a href="#" class="left" id="selectHtml5-{{ filename }}">
         <div>Tap here to</div>
-        <h3>View as<br />HTML 5</h3>
+        <h3>View as<br>HTML 5</h3>
         <div>Loads {{ compression }}% faster</div>
     </a>
     <a href="#" class="right" id="selectGIF-{{ filename }}">
         <div>Tap here to</div>
-        <h3>View as<br />GIF</h3>
+        <h3>View as<br>GIF</h3>
         <div>Loads more reliably</div>
     </a>
 </div>
@@ -73,7 +73,7 @@ window.addEventListener('load', function() {
     <source src="{{ cdn }}/{{ filename }}.ogv" type='video/ogg'>
   {% endif %}
 </video>
-<img src="this space intentionally left blank" class="hidden" id="gif-option-{{ filename }}" />
+<img src="this space intentionally left blank" class="hidden" id="gif-option-{{ filename }}">
 {% else %}
 <video controls {% if flags['loop'] %}loop{% endif %} poster="{{ cdn }}/{{filename}}.jpg">
   {% if ua_platform == 'android' %}

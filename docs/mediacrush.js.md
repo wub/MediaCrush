@@ -60,7 +60,7 @@ The full list of modifiers is:
 
 Say you have this in your page somewhere:
 
-    <input type="file" id="fileToUpload" />
+    <input type="file" id="fileToUpload">
 
 You can do this to upload it to MediaCrush:
 

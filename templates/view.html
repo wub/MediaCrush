@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% block mobile_responsive %}{% endblock %}
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='view.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='view.css') }}">
 {% endblock %}
 {% block scripts %}
     <script>
@@ -21,24 +21,24 @@
 {% endblock %}
 {% block meta %}
     <meta name="robots" content="noindex">
-    <meta property="og:type" content="{{ mimetype }}" />
-    <meta property="og:site_name" content="MediaCrush" />
+    <meta property="og:type" content="{{ mimetype }}">
+    <meta property="og:site_name" content="MediaCrush">
     {% if processor.startswith("video") %}
         {# Generated thumbnail #}
-        <meta property="og:image" content="{{ root }}/{{ filename }}.jpg" />
-        <meta property="twitter:card" content="player" />
-        <meta property="twitter:title" content="MediaCrush" />
-        <meta property="twitter:description" content="A video shared with MediaCrush." />
-        <meta property="twitter:player" content="{{ share('frame', filename) }}" />
-        <meta property="twitter:player:stream" content="{{ media_url(filename) }}.mp4" />
-        <meta property="twitter:player:stream:content_type" content="video/mp4" />
-        <meta property="twitter:player:width" content="640" />
-        <meta property="twitter:player:height" content="360" />
+        <meta property="og:image" content="{{ root }}/{{ filename }}.jpg">
+        <meta property="twitter:card" content="player">
+        <meta property="twitter:title" content="MediaCrush">
+        <meta property="twitter:description" content="A video shared with MediaCrush.">
+        <meta property="twitter:player" content="{{ share('frame', filename) }}">
+        <meta property="twitter:player:stream" content="{{ media_url(filename) }}.mp4">
+        <meta property="twitter:player:stream:content_type" content="video/mp4">
+        <meta property="twitter:player:width" content="640">
+        <meta property="twitter:player:height" content="360">
         <meta property="twitter:image" content="{{ media_url(filename) }}.jpg">
     {% elif processor.startswith("audio") %}
-        <meta property="og:image" content="/static/audio.png" />
+        <meta property="og:image" content="/static/audio.png">
     {% else %}
-    <meta property="og:image" content="{{ root }}/{{ original }}" />
+    <meta property="og:image" content="{{ root }}/{{ original }}">
         <meta name="twitter:card" content="photo">
         <meta name="twitter:image" content="{{ media_url(original) }}">
     {% endif %}
@@ -56,12 +56,12 @@
         {% for flag, value in flags.items() %}
         {% if flag == 'nsfw' %}
         <label for="{{ flag }}" class="checkbox">
-            <input type="checkbox" data-flag="{{ flag }}" id="{{ flag }}" name="{{ flag }}" {% if value %}checked{% endif %} autocomplete="off" />
+            <input type="checkbox" data-flag="{{ flag }}" id="{{ flag }}" name="{{ flag }}" {% if value %}checked{% endif %} autocomplete="off">
             NSFW?
         </label>
         {% else %}
         <label for="{{ flag }}" class="checkbox">
-            <input type="checkbox" data-flag="{{ flag }}" id="{{ flag }}" name="{{ flag }}" {% if value %}checked{% endif %} autocomplete="off" />
+            <input type="checkbox" data-flag="{{ flag }}" id="{{ flag }}" name="{{ flag }}" {% if value %}checked{% endif %} autocomplete="off">
             {{ flag }}
         </label>
         {% endif %}
@@ -90,22 +90,22 @@
 <div class="hidden" id="embed">
     <div class="center">
         <p>Copy this HTML and paste it into your website:</p>
-        <input id="embed-value" type="text" value='&lt;iframe src="{{ protocol }}://{{ domain }}/{{ filename }}/frame" frameborder="0" allowFullscreen></iframe>' class="selectall" />
+        <input id="embed-value" type="text" value='&lt;iframe src="{{ protocol }}://{{ domain }}/{{ filename }}/frame" frameborder="0" allowFullscreen></iframe>' class="selectall">
         <p>Are you a developer? You might want to read our <a href="/docs">developer documentation</a>.</p>
     </div>
 </div>
 <div class="hidden" id="share">
     <dl>
         <dt>Link</dt>
-        <dd><input type="text" value="{{ share('link', filename) }}" class="selectall" /></dd>
+        <dd><input type="text" value="{{ share('link', filename) }}" class="selectall"></dd>
         <dt>Direct Link</dt>
-        <dd><input type="text" value="{{ share('directlink', filename) }}" class="selectall" /></dd>
+        <dd><input type="text" value="{{ share('directlink', filename) }}" class="selectall"></dd>
         <dt>Markdown</dt>
-        <dd><input type="text" value="{{ share('markdown', filename) }}" class="selectall" /></dd>
+        <dd><input type="text" value="{{ share('markdown', filename) }}" class="selectall"></dd>
         <dt>HTML</dt>
-        <dd><input type="text" value='{{ share('html', filename) }}' class="selectall" /></dd>
+        <dd><input type="text" value='{{ share('html', filename) }}' class="selectall"></dd>
         <dt>BBCode</dt>
-        <dd><input type="text" value='{{ share('bbcode', filename) }}' class="selectall" /></dd>
+        <dd><input type="text" value='{{ share('bbcode', filename) }}' class="selectall"></dd>
     </dl>
 </div>
 {% include "advertisement.html" %}

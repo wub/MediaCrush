@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block styles %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='album.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='album.css') }}">
 {% endblock %}
 {% block scripts %}
     <script>
@@ -17,18 +17,18 @@
     <meta name="robots" content="noindex">
 {% for item in [ items[0] ] %}
 {% set type = item.processor %}
-    <meta property="og:type" content="{{ mimetype }}" />
-    <meta property="og:site_name" content="MediaCrush" />
+    <meta property="og:type" content="{{ mimetype }}">
+    <meta property="og:site_name" content="MediaCrush">
     {% if type.startswith("video") %}
-        <meta property="og:image" content="{{ root }}/{{ item.hash }}.jpg" />
-        <meta property="twitter:card" content="player" />
-        <meta property="twitter:title" content="MediaCrush" />
-        <meta property="twitter:description" content="A video shared with MediaCrush." />
+        <meta property="og:image" content="{{ root }}/{{ item.hash }}.jpg">
+        <meta property="twitter:card" content="player">
+        <meta property="twitter:title" content="MediaCrush">
+        <meta property="twitter:description" content="A video shared with MediaCrush.">
         <meta property="twitter:image" content="https://mediacru.sh/{{ item.hash }}.jpg">
     {% elif type.startswith("audio") %}
-        <meta property="og:image" content="https://mediacru.sh/static/audio.png" />
+        <meta property="og:image" content="https://mediacru.sh/static/audio.png">
     {% else %}
-        <meta property="og:image" content="https://mediacru.sh/{{ item.original }}" />
+        <meta property="og:image" content="https://mediacru.sh/{{ item.original }}">
         <meta name="twitter:card" content="photo">
         <meta name="twitter:image" content="https://mediacru.sh/{{ item.original }}">
     {% endif %}

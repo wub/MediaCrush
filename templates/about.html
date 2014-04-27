@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block styles %}
 {% if mobile %}
-<link rel="stylesheet" href="{{ url_for('static', filename='about-mobile.css') }}?version=2" />
+<link rel="stylesheet" href="{{ url_for('static', filename='about-mobile.css') }}?version=2">
 {% else %}
-<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}?version=2" />
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}?version=2">
 {% endif %}
 {% endblock %}
 {% block content %}
@@ -15,12 +15,12 @@ they load even faster:</p>
 <div class="row">
     <div class="left">
         <h3>Before MediaCrush</h3>
-        <img src="{{ url_for('static', filename='demo.gif') }}" alt="GIF demo" />
+        <img src="{{ url_for('static', filename='demo.gif') }}" alt="GIF demo">
         <p>Filesize: 1965 kB (~2.0 MB)</p>
     </div>
     <div class="middle">
-        Result:<br />
-        <strong>1600% faster</strong><br />
+        Result:<br>
+        <strong>1600% faster</strong><br>
         <a href="/">Try it yourself!</a>
     </div>
     <div class="right">
